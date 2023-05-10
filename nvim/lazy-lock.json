@@ -1,0 +1,9 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "51a3873ccd59239e4dff3319561d51031f4b52d2" },
+  "nvim-tree-remote.nvim": { "branch": "master", "commit": "294432a0e8a1f09be4db0a07029b2d1489a28d2f" },
+  "nvim-tree.lua": { "branch": "master", "commit": "270c95556cad96d18ca547d86ae65927334b108b" },
+  "nvim-web-devicons": { "branch": "master", "commit": "986875b7364095d6535e28bd4aac3a9357e91bbe" },
+  "tmux.nvim": { "branch": "main", "commit": "57220071739c723c3a318e9d529d3e5045f503b8" },
+  "tmuxsend.vim": { "branch": "master", "commit": "aa43bd4906e7893bd832e9b5ce818da897c174e6" },
+  "tokyonight.nvim": { "branch": "main", "commit": "df13e3268a44f142999fa166572fe95a650a0b37" }
+}
