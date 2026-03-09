@@ -76,7 +76,7 @@ keybinds clear-defaults=true {
         bind "up" { MovePane "up"; }
         bind "right" { MovePane "right"; }
         bind "h" { MovePane "left"; }
-        bind "Ctrl h" { SwitchToMode "normal"; }
+        bind "Ctrl m" { SwitchToMode "normal"; }
         bind "j" { MovePane "down"; }
         bind "k" { MovePane "up"; }
         bind "l" { MovePane "right"; }
@@ -134,30 +134,33 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" {
-        bind "Alt left" { MoveFocusOrTab "left"; }
-        bind "Alt down" { MoveFocus "down"; }
-        bind "Alt up" { MoveFocus "up"; }
-        bind "Alt right" { MoveFocusOrTab "right"; }
-        bind "Alt +" { Resize "Increase"; }
-        bind "Alt -" { Resize "Decrease"; }
-        bind "Alt =" { Resize "Increase"; }
-        bind "Alt [" { PreviousSwapLayout; }
-        bind "Alt ]" { NextSwapLayout; }
-        bind "Alt f" { ToggleFloatingPanes; }
+        // Vim-style navigation (won't conflict with macOS)
+        bind "Ctrl h" { MoveFocusOrTab "left"; }
+        bind "Ctrl j" { MoveFocus "down"; }
+        bind "Ctrl k" { MoveFocus "up"; }
+        bind "Ctrl l" { MoveFocusOrTab "right"; }
+        
+        // New pane shortcuts
+        bind "Ctrl d" { NewPane "Down"; }
+        bind "Ctrl r" { NewPane "Right"; }
+        bind "Ctrl a" { NewTab; }
+        
+        // Tab navigation
+        bind "Ctrl y" { GoToPreviousTab; }
+        bind "Ctrl u" { GoToNextTab; }
+        bind "Ctrl w" { CloseTab; }
+        
+        // Quick actions
+        bind "Ctrl f" { ToggleFloatingPanes; }
+        bind "Ctrl z" { ToggleFocusFullscreen; }
         bind "Ctrl g" { SwitchToMode "locked"; }
-        bind "Alt h" { MoveFocusOrTab "left"; }
-        bind "Alt i" { MoveTab "left"; }
-        bind "Alt j" { MoveFocus "down"; }
-        bind "Alt k" { MoveFocus "up"; }
-        bind "Alt l" { MoveFocusOrTab "right"; }
-        bind "Alt n" { NewPane; }
-        bind "Alt o" { MoveTab "right"; }
-        bind "Alt p" { TogglePaneInGroup; }
-        bind "Alt Shift p" { ToggleGroupMarking; }
         bind "Ctrl q" { Quit; }
+        
+        // Pane management
+        bind "Ctrl x" { CloseFocus; }
     }
     shared_except "locked" "move" {
-        bind "Ctrl h" { SwitchToMode "move"; }
+        bind "Ctrl m" { SwitchToMode "move"; }
     }
     shared_except "locked" "session" {
         bind "Ctrl o" { SwitchToMode "session"; }
@@ -365,7 +368,7 @@ web_client {
 // copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
 // 
-// copy_command "pbcopy"
+copy_command "pbcopy"
  
 // Choose the destination for copied text
 // Allows using the primary selection buffer (on x11/wayland) instead of the system clipboard.
