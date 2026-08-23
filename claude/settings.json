@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "enabledPlugins": {
+    "gitkraken-hooks@gitkraken": true
+  },
+  "extraKnownMarketplaces": {
+    "gitkraken": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/hisham/.claude/plugins/marketplaces/gitkraken"
+      }
+    }
+  },
+  "theme": "dark"
+}
